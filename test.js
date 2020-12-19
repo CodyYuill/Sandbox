@@ -8,7 +8,7 @@ $.ajax({
     url: queryURL,
     method: "GET",
      headers:{
-         "Access-Control-Allow-Origin": "https://codyyuill.github.io/Sandbox/"
+         "Access-Control-Allow-Origin": https://codyyuill.github.io/Sandbox/
      }
 });
 
