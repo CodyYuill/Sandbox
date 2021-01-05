@@ -1,16 +1,33 @@
-var clientId = `fbfb6a35515341738383500c846de6b3`;
-var redirectURI = "https://codyyuill.github.io/Sandbox/"
-var queryURL = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectURI}`;
-
-var accessToken;
-
+var search = "thunderstruck";
+var queryURL = `https://itunes.apple.com/search?term=${search}&country=CA&media=music&entity=musicTrack&limit=1`
 $.ajax({
     url: queryURL,
-    method: "GET",
-     headers:{
-         "Access-Control-Allow-Origin": "https://codyyuill.github.io/Sandbox/"
-     }
+    method: "GET", 
+    header:{"Access-Control-Allow-Origin": "*"}
+}).done(function(data){
+    //parse data into JSON format 
+    var trackData = JSON.parse(data);
+    //grab data we want
+    var trackName = trackData.results[0].trackName;
+    console.log(trackName);
 });
+
+
+
+
+// var clientId = `fbfb6a35515341738383500c846de6b3`;
+// var redirectURI = "https://codyyuill.github.io/Sandbox/"
+// var queryURL = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectURI}`;
+
+// var accessToken;
+
+// $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//      headers:{
+//          "Access-Control-Allow-Origin": "https://codyyuill.github.io/Sandbox/"
+//      }
+// });
 
 // var secret = `1d7c2749ef7f404f9d5b398a5b1ad410`;
 // var authURL = `https://accounts.spotify.com/api/token?grant_type=client_credentials`
