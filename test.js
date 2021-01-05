@@ -3,7 +3,7 @@ var queryURL = `https://itunes.apple.com/search?term=${search}&country=CA&media=
 $.ajax({
     url: queryURL,
     method: "GET", 
-    header:{"Access-Control-Allow-Origin": "*"}
+    headers:{ 'Access-Control-Allow-Origin': '*'}
 }).done(function(data){
     //parse data into JSON format 
     var trackData = JSON.parse(data);
