@@ -1,5 +1,5 @@
 var search = "thunderstruck";
-var queryURL = `https://itunes.apple.com/search?term=${search}&country=CA&media=music&entity=musicTrack&limit=1`
+var queryURL = `https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=${search}&country=CA&media=music&entity=musicTrack&limit=1`
 $.ajax({
     url: queryURL,
     method: "GET", 
